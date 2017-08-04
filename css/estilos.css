@@ -22,8 +22,14 @@ a:hover, a:visited{
 img {
 	box-shadow: 2px 2px 2px #02010a;
 	max-width: 100%;
-  width: 90%;
-  margin: 5% ;
+	width: 90%;
+	margin: 5%;
+}
+
+section{
+  float: left;
+  width: 100%;
+  padding: 10px 0;
 }
 
 /*Cabecera*/
@@ -32,7 +38,9 @@ header{
   border-radius: 10px 10px 0 0;
   float: left;
   width: 100%;
+  animation: slideIn 1s;
 }
+
 header h1 {
 	float: left;
 	color: #ffffff;
@@ -61,27 +69,15 @@ nav ul li{
   margin: 15px 10px;
 }
 
-#cabecera nav ul li a:link{
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-#cabecera nav ul li a:hover, #cabecera nav ul li a:visited, #cabecera nav ul li a:active {
+#cabecera nav .active > a:link, #cabecera nav ul li a:hover, #cabecera nav ul li a:visited, #cabecera nav ul li a:active {
   color: #ffffff;
   text-decoration: none !important;
 }
 
 
-section{
-  float: left;
-  width: 100%;
-  padding: 10px 0;
-}
-
 /*Section Imagen Central*/
 #imagenCentral{
   background-color: #82c3a6;
-  margin: 10 auto;
 }
 
 /*Section Imagen Secundaria*/
@@ -94,7 +90,8 @@ section{
 }
 
 #imagenSecundaria img{
-  margin-bottom: 1%
+  margin-bottom: 1%;
+  border: 1px solid;
 }
 div [class^="imgSec"]{
   flex: 1 2 100%;
@@ -119,12 +116,11 @@ figure{
   transition: transform 1s, box-shadow 1s;
   -webkit-transition: transform 1s, box-shadow 1s;
 }
+
 #paisajes:hover{
-  -webkit-transition: transform 1s, box-shadow 1s;
   -webkit-transform: rotate(10deg);
   -webkit-box-shadow: 2px 2px 2px #82c3a6;
 
-  transition: transform 1s, box-shadow 1s;
   transform: rotate(10deg);
   box-shadow: 2px 2px 2px #82c3a6;
 
@@ -132,21 +128,31 @@ figure{
 }
 
 #retratos{
-  transition: all;
-  -webkit-transition: translate 1s;
+  transition: all 1s;
+  -webkit-transition: all 1s;
 }
 #retratos:hover{
-  -webkit-transition: translate 1s;
   -webkit-transform: translate(20px, -5px);
   -webkit-box-shadow: 2px 2px 2px #82c3a6;
 
-  transition: all 1s;
   transform: translate(20px, -5px);
   box-shadow: 2px 2px 2px #82c3a6;
 
   border: 2px solid;
 }
 
+@-webkit-keyframes slideIn{
+  0%{
+    position: relative;
+    margin-top: 150%;
+  }
+  60%{
+    margin-top:-5%;
+  }
+  100%{
+    margin-top:0%
+  }
+}
 
 /*Seccion Paisajes / Retratos*/
 
