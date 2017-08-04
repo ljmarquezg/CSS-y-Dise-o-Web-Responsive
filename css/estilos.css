@@ -5,7 +5,8 @@ body{
 }
 
 .contenido{
-  width: 100%
+  width: 100%;
+
 }
 
 a:link, a:visited{
@@ -84,7 +85,7 @@ section{
 }
 
 /*Section Imagen Secundaria*/
-#imagenSecundaria{
+#imagenSecundaria, #galeria{
   display: flex;
   flex-flow: row wrap;
   background: #d5c75f;
@@ -102,7 +103,9 @@ div [class^="imgSec"]{
 figure{
   text-align: center;
   margin: 0px;
+  flex: 100%;
 }
+
 .imgSecIzquierda {
   order: 1;
   flex-grow: 1;
@@ -112,6 +115,52 @@ figure{
   flex-grow: 1;
 }
 
+#paisajes{
+  transition: transform 1s, box-shadow 1s;
+  -webkit-transition: transform 1s, box-shadow 1s;
+}
+#paisajes:hover{
+  -webkit-transition: transform 1s, box-shadow 1s;
+  -webkit-transform: rotate(10deg);
+  -webkit-box-shadow: 2px 2px 2px #82c3a6;
+
+  transition: transform 1s, box-shadow 1s;
+  transform: rotate(10deg);
+  box-shadow: 2px 2px 2px #82c3a6;
+
+  border: 2px solid;
+}
+
+#retratos{
+  transition: all;
+  -webkit-transition: translate 1s;
+}
+#retratos:hover{
+  -webkit-transition: translate 1s;
+  -webkit-transform: translate(20px, -5px);
+  -webkit-box-shadow: 2px 2px 2px #82c3a6;
+
+  transition: all 1s;
+  transform: translate(20px, -5px);
+  box-shadow: 2px 2px 2px #82c3a6;
+
+  border: 2px solid;
+}
+
+
+/*Seccion Paisajes / Retratos*/
+
+#galeria figure:first-child{
+  filter:blur(10px);
+}
+
+#galeria figure:nth-child(even){
+  filter:grayscale(100%);
+}
+
+#galeria figure:nth-child(3){
+  filter:sepia(90%);
+}
 
 /*Footer*/
 footer{
@@ -178,8 +227,19 @@ div [class^="footer-info"]{
   div [class*="imgSec"]{
     flex: 1 2 50%;
   }
+
+  .galeria{
+    flex: 1 2 33.33%;
+  }
+
   div [class^="footer-info"]{
     flex: 1 4 25%;
+  }
+
+  figure{
+    text-align: center;
+    margin: 0px;
+    flex: 33.33%
   }
 
 }
