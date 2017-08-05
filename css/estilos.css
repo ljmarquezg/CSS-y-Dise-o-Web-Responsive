@@ -69,9 +69,11 @@ nav ul li{
   margin: 15px 10px;
 }
 
-#cabecera nav .active > a:link, #cabecera nav ul li a:hover, #cabecera nav ul li a:visited, #cabecera nav ul li a:active {
+#cabecera nav .active a:link, #cabecera nav ul li a:hover, #cabecera nav ul li a:visited, #cabecera nav ul li a:active {
   color: #ffffff;
-  text-decoration: none !important;
+}
+#cabecera nav .active a:link{
+text-decoration: none;
 }
 
 
